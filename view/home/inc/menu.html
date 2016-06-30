@@ -1,51 +1,30 @@
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <h1>Liblog <span style="font-size: 12px">v1.0</span></h1>
-        </div>
-        <ul class="site-nav site-navbar">
-            <li class="item current">
-                <a href="/"> 首页</a>
-            </li>
-            <li class="item common">
-                <a href="/news.html"> 前端资讯</a>
-            </li>
-            <li class="item common">
-                <a href="/node.html"> Node.js</a>
-            </li>
-            <li class="item common">
-                <a href="/mac.html"> mac精品</a>
-            </li>
-            <li class="item common">
-                <a href="/activity.html"> 活动</a>
-            </li>
-            <li class="item common">
-                <a href="/others.html"> 大杂烩</a>
-            </li>
-            <li class="item common">
-                <a href="/jobs.html"> 招聘</a>
-            </li>
-            <li class="item common">
-                <a href="/about.html"> 关于</a>
-            </li>
-            <li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
-        </ul>
-        <div class="topbar">
-            <ul class="site-nav topmenu">
-                <li style="display: block;">
-                    <a class="red" href="http://livisky.github.io/" target="_blank"><i class="glyphicon glyphicon-thumbs-up"></i>推荐:Liblog v1.0</a>
-                </li>
-                <li>
-                    <a href="/links.html">友情链接</a>
-                </li>
-                <li style="display: block;">
-                    <a href="/guest.html">留言板</a>
-                </li>
-                <li style="display: block;">
-                    <a href="/about.html">关于</a>
-                </li>
-            </ul>
-        </div>
-        <i class="fa fa-bars m-icon-nav"></i>
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-color--green-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title"><a href="/" class="mdl-color-text--white">Logo ...</a></span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <% webNavs.forEach(function(item,i){ %>
+                    <a href="/<%=item.itemurl%>.html" class="mdl-navigation__link">
+                        <%=item.itemname%>
+                    </a>
+                    <% }) %>
+            </nav>
+            <!--search-->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" name="sample" id="waterfall-exp" placeholder="搜一下" />
+                </div>
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
+                    <i class="material-icons">search</i>
+                </label>
+            </div>
+            <!--//search-->
+    </header>
+
+    <div class="mdl-layout__drawer">
+        <!-- 边栏 -->
+        <p>item</p>
     </div>
-</header>
+    <main class="mdl-layout__content">
+        <!-- 主内容 -->
